@@ -4,4 +4,14 @@
 
 ![Screenshot](/images/storefront.png)
 
-### 
+### The user uses the arrow keys (or enters the item's ID) to choose an item and quantity to purchase. The purchase's total price is calculated.
+
+![Screenshot](/images/purchase.png)
+
+### The stock quantity is decreased following a sale. This is also refelected in the SQL database.
+
+![Screenshot](/images/quantity.png)
+
+![Screenshot](/images/sql.png)
+
+
