@@ -8,7 +8,7 @@
 
 ![Screenshot](/images/purchase.png)
 
-### The stock quantity is decreased following a sale. This is also refelected in the SQL database.
+### The stock quantity is decreased following a sale. This is also reflected in the SQL database.
 
 ![Screenshot](/images/quantity.png)
 
