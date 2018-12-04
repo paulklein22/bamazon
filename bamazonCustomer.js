@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const mysql = require("mysql");
 const inquirer = require("inquirer");
 const cTable = require('console.table');
@@ -6,7 +8,7 @@ const connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
     user: "root",
-    password = MYSQL_ID, // Check that this is correct
+    password: process.env.MYSQL_ID,
     database: "bamazon_db"
 });
 
@@ -52,14 +54,14 @@ const productsList = () => {
                 var quantity = res[0].stock_quantity;
                 var price = res[0].price;
                 if (input.quantity > quantity) {
-                    console.log("Insufficient quantity!")
+                    console.log("We're sorry, this item is out of stock.")
             }
             else {
                 connection.query("UPDATE products SET ? WHERE item_id = ?", [{ stock_quantity: quantity - input.quantity }, input.item_id], function (err, res) {
                     if (err) {
                         throw err;
                 }
-                console.log("Your purchase cost you: $" + (price * input.quantity));
+                console.log("Total cost: $" + (price * input.quantity));
                 })
             }
         })
